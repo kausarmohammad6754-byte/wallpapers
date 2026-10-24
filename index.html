@@ -1,0 +1,172 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DreamWall - Beautiful Wallpapers</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Background slideshow -->
+  <div class="background-slideshow" id="backgroundSlideshow"></div>
+  <div class="background-overlay"></div>
+
+  <!-- Navigation -->
+  <header class="navbar">
+    <a href="#" class="logo">Dream<span>Wall</span></a>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
+      ☰
+    </button>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#featured">Front</a>
+      <a href="#nature">Nature</a>
+      <a href="#collections">Collections</a>
+      <a href="#favorites">Favorites</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <p class="eyebrow">YOUR SCREEN, YOUR STYLE</p>
+        <h1>Find Your Perfect <span>Wallpaper</span></h1>
+        <p class="hero-description">
+          Explore beautiful wallpapers and give your screen a fresh,
+          dreamy and aesthetic look.
+        </p>
+
+        <div class="search-box">
+          <input
+            type="search"
+            id="searchInput"
+            placeholder="Search wallpapers or collections..."
+            aria-label="Search wallpapers"
+          >
+          <button id="searchButton">Search</button>
+        </div>
+
+        <p class="search-hint">
+          Try Nature, Pink, Black, Peach, Purple or Yellow
+        </p>
+      </div>
+    </section>
+
+    <!-- Front collection -->
+    <section class="wallpaper-section" id="featured">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">HANDPICKED FOR YOU</p>
+          <h2>Front Wallpapers</h2>
+          <p>Our featured collection to refresh your screen.</p>
+        </div>
+      </div>
+      <div class="wallpaper-grid" id="frontGrid"></div>
+    </section>
+
+    <!-- Nature collection -->
+    <section class="wallpaper-section" id="nature">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">CALM YOUR MIND</p>
+          <h2>Nature Wallpapers</h2>
+          <p>Bring the beauty of nature to your device.</p>
+        </div>
+      </div>
+      <div class="wallpaper-grid" id="natureGrid"></div>
+    </section>
+
+    <!-- Other collections appear when selected/searched -->
+    <section class="wallpaper-section collection-section" id="collections">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">EXPLORE YOUR STYLE</p>
+          <h2>Wallpaper Collections</h2>
+          <p>Choose a collection to discover its wallpapers.</p>
+        </div>
+      </div>
+
+      <div class="category-buttons" id="categoryButtons">
+        <button class="category-btn" data-category="alpha">Alpha</button>
+        <button class="category-btn" data-category="yellow">Yellow</button>
+        <button class="category-btn" data-category="black">Black</button>
+        <button class="category-btn" data-category="peach">Peach</button>
+        <button class="category-btn" data-category="pink">Pink</button>
+        <button class="category-btn" data-category="purple">Purple</button>
+        <button class="category-btn" data-category="seagreen">Sea Green</button>
+        <button class="category-btn" data-category="white">White</button>
+      </div>
+
+      <div class="results-heading" id="resultsHeading" hidden>
+        <h3 id="resultsTitle"></h3>
+        <button id="clearResults" class="text-button">Show all collections</button>
+      </div>
+
+      <div class="wallpaper-grid" id="collectionGrid"></div>
+      <p class="empty-message" id="emptyMessage" hidden>
+        No wallpapers found. Try another search.
+      </p>
+    </section>
+
+    <!-- Favorites -->
+    <section class="wallpaper-section" id="favorites">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">SAVED WITH LOVE</p>
+          <h2>Your Favorites</h2>
+          <p>Your favorite wallpapers will appear here.</p>
+        </div>
+      </div>
+      <div class="wallpaper-grid" id="favoritesGrid"></div>
+      <p class="empty-message" id="favoritesEmpty">
+        You have not saved any favorites yet. Tap ♡ on a wallpaper to save it.
+      </p>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact-section" id="contact">
+      <p class="eyebrow">LET'S CONNECT</p>
+      <h2>A Little Note From You?</h2>
+      <p>
+        Have a suggestion for our wallpaper collection?
+        We would love to hear from you.
+      </p>
+      <a class="contact-button" href="mailto:hello@example.com">
+        Contact Us
+      </a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <a href="#home" class="logo">Dream<span>Wall</span></a>
+    <p>Make your screen feel like you. ✨</p>
+    <p>© <span id="currentYear"></span> DreamWall. All rights reserved.</p>
+  </footer>
+
+  <!-- Wallpaper details popup -->
+  <div class="modal" id="wallpaperModal" aria-hidden="true">
+    <div class="modal-content">
+      <button class="modal-close" id="modalClose" aria-label="Close popup">
+        &times;
+      </button>
+      <img id="modalImage" src="" alt="Selected wallpaper">
+      <h3 id="modalTitle"></h3>
+      <p id="modalCategory"></p>
+      <div class="modal-actions">
+        <button id="modalFavorite" class="secondary-button">♡ Favorite</button>
+        <a id="modalDownload" class="download-button" href="#" download>
+          Download Wallpaper
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
